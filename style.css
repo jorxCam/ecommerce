@@ -9,8 +9,8 @@ body {
   .navbar a {
     color: white;
     text-decoration: none;
-    margin-left: 10px;
-    margin-right: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 
  /* {
@@ -26,30 +26,21 @@ body {
   flex:wrap;
 }
 
-.carros{
-  display: flex;
-  flex-wrap: wrap;
-  /*flex-flow: row wrap;*/
-  flex-direction: row;
-  align-content: flex-start;
-}
-
-
 .main  {
   background-color: #6d6de8;
   color: white;
   width: 100%;
   display: flex;
-  justify-content: flex-end;
+  justify-content: baseline;
   text-decoration: none;
-  margin-left: 10px;
+  margin-left: 25%;
   margin-right: 10px;
   align-items: center;
 }
 
 .main :hover{
-  color:red;
-  border-top:2px solid red;
+  color:black;
+  border-top:2px solid black;
   /* font-size:13px; */
   text-transform:uppercase;
   line-height:20px;
