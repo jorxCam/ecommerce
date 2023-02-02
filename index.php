@@ -8,7 +8,7 @@
     <title>e-commerce</title>
     
 </head>
-<body onload='document.form1.text1.focus()'>
+<body onload='document.form1.login.focus()'>
 
 <div class="navbar">
   <div class="left">
@@ -30,7 +30,7 @@
 <form name="form1" action="#"> 
     <ul>
         <li>    <label for="login">login:</label><br></li>
-        <li>    <input type="text" id="login" name="login"><br></li>
+        <li>    <input type= "text" id="login" onblur="validateemail2();"/><label id="validate"></label><br></li>
         <li>&nbsp;</li>
 
         <li><label for="pwd">Password:</label><br></li>
@@ -43,7 +43,50 @@
 </form>
 </div>
 
+<a href="inscription.php">Inscrivez-vous à un compte</a>
+
 <script src="email-validation.js"></script>
+
+<script>
+function validateemail2() {
+var request;
+try {
+    request= new XMLHttpRequest();
+    }
+catch (tryMicrosoft) {
+
+                    try {
+                        request= new ActiveXObject("Msxml2.XMLHTTP");
+                        }
+                    catch (otherMicrosoft) 
+                        {
+
+                        try {
+                            request= new ActiveXObject("Microsoft.XMLHTTP");
+                            }
+                        catch (failed) {
+                            request= null;
+                            }
+                        }
+                    }
+
+    var url= "emailvalidation.php";
+    var emailaddress= document.getElementById("login").value;
+    var vars= "email="+emailaddress;
+    request.open("POST", url, true);
+
+    request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+    request.onreadystatechange= function() {
+    if (request.readyState == 4 && request.status == 200) {
+	    var return_data=  request.responseText;
+	    document.getElementById("validate").innerHTML= return_data;
+                }
+    }
+
+    request.send(vars);
+    }
+</script>
 
 </body>
 </html>
