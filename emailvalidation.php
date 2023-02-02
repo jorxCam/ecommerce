@@ -3,8 +3,8 @@
 $email= $_POST['email'];
 
 if (filter_var($email, FILTER_VALIDATE_EMAIL) !== false) {
-  echo("Valid email address");
+  echo("Valid email");
 } else {
-  echo("Invalid email address");
+  echo("Invalid email");
 }
 ?> 

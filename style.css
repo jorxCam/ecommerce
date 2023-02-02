@@ -13,13 +13,9 @@ body {
     margin-right: 20px;
   }
 
- /* {
-  box-sizing: border-box;
-}     */
-
 .navbar {
   /* The width is 20%, by default */
-  /* height: 30%;  */
+  /* height: 30%;   */
   width: 100%;
   background-color: #6d6de8;
   display:flex;
@@ -57,6 +53,8 @@ body {
   }
 }
 
+
+
 li {list-style-type: none;
     font-size: 16pt;
     }
@@ -71,14 +69,17 @@ li {list-style-type: none;
     .mail h2 {
     margin-left: 38px;
     }
+    .mail h3 {
+        margin-left: 38px;
+    }
     input {
-    font-size: 20pt;
+    font-size: 14pt;
     }
     input:focus, textarea:focus{
     background-color: lightyellow;
     }
     input submit {
-    font-size: 12pt;
+    font-size: 10pt;
     }
     .rq {
     color: #FF0000;
