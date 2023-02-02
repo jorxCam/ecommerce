@@ -1,0 +1,96 @@
+
+body {
+    background-color: rgb(223, 223, 223);
+  }
+  h1 {
+    color: black;
+  }
+
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+ /* {
+  box-sizing: border-box;
+}     */
+
+.navbar {
+  /* The width is 20%, by default */
+  /* height: 30%;  */
+  width: 100%;
+  background-color: #6d6de8;
+  display:flex;
+  flex:wrap;
+}
+
+.carros{
+  display: flex;
+  flex-wrap: wrap;
+  /*flex-flow: row wrap;*/
+  flex-direction: row;
+  align-content: flex-start;
+}
+
+
+.main  {
+  background-color: #6d6de8;
+  color: white;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  align-items: center;
+}
+
+.main :hover{
+  color:red;
+  border-top:2px solid red;
+  /* font-size:13px; */
+  text-transform:uppercase;
+  line-height:20px;
+  text-decoration:none;
+  margin-left: 10px;
+  margin-right: 10px;
+
+}
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width: 800px) {
+  .left, .main, .right, .navbar {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+  }
+}
+
+li {list-style-type: none;
+    font-size: 16pt;
+    }
+    .mail {
+    margin: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    width: 400px;
+    background : #D8F1F8;
+    border: 1px soild silver;
+    }
+    .mail h2 {
+    margin-left: 38px;
+    }
+    input {
+    font-size: 20pt;
+    }
+    input:focus, textarea:focus{
+    background-color: lightyellow;
+    }
+    input submit {
+    font-size: 12pt;
+    }
+    .rq {
+    color: #FF0000;
+    font-size: 10pt;
+    }
+    
