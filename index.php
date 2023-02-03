@@ -17,7 +17,7 @@
 
   <div class="main">
     <a href="" class="titulo" >ACCUEIL </a>
-    <a href="" class="titulo" >LISTE</a>
+    <a href="liste.php" class="titulo" >LISTE</a>
     <a href=""  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
@@ -30,7 +30,7 @@
 <form name="form1" action="#"> 
     <ul>
         <li>    <label for="login">login:</label><br></li>
-        <li>    <input type= "text" id="login" onblur="validateemail2();"/><label id="validate"></label><br></li>
+        <li>    <input type= "text" id="login" placeholder="email@example.com" onblur="validateemail2();"/><label id="validate"></label><br></li>
         <li>&nbsp;</li>
 
         <li><label for="pwd">Password:</label><br></li>
@@ -70,7 +70,7 @@ catch (tryMicrosoft) {
                         }
                     }
 
-    var url= "emailvalidation.php";
+    var url= "emailvalidationlogin.php";
     var emailaddress= document.getElementById("login").value;
     var vars= "email="+emailaddress;
     request.open("POST", url, true);

@@ -8,7 +8,7 @@
     <title>e-commerce</title>
     
 </head>
-<body onload='document.form2.fname.focus()'>>
+<body onload='document.form2.fname.focus()'>
 
 <div class="navbar">
   <div class="left">
@@ -17,7 +17,7 @@
 
   <div class="main">
     <a href="" class="titulo" >ACCUEIL </a>
-    <a href="" class="titulo" >LISTE</a>
+    <a href="liste.php" class="titulo" >LISTE</a>
     <a href=""  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
@@ -42,7 +42,8 @@
         <li>    <input type="text" id="pseudo" name="pseudo" placeholder="pseudo"><br></li>
 
         <li>     <label for="email">Email:</label><br></li>
-        <li>    <input type="text" id="email"  onblur="validateemail2();"/><label id="validate"></label><br></li><br></li>
+        <li>    <input type="text" id="email" placeholder="email@example.com" onblur="validateemail2();"/><label id="validate"></label><br></li>
+        
   
         <li>    <label for="pwd">Mot de passe:</label><br></li>
         <li>    <input type="password" id="pwd" name="pwd"><br></li>
@@ -50,18 +51,18 @@
         <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form2.email)"/></li>
         <li><input type="reset"></li>
         <br>
-       
+        <p>vous pouvez appuyer sur "Reset" pour effacer les valeurs.</p>
 </ul>
 
   
 
 </form> 
 
-<p>vous puvez appuyer sur "Reset" pour effacer les valeurs.</p>
+
 </div>
 
 
-
+<script src="email-validation.js"></script>
 
 <script>
 function validateemail2() {
@@ -86,8 +87,8 @@ catch (tryMicrosoft) {
                         }
                     }
 
-    var url= "emailvalidation.php";
-    var emailaddress= document.getElementById("login").value;
+    var url= "emailvalidationinscription.php";
+    var emailaddress= document.getElementById("email").value;
     var vars= "email="+emailaddress;
     request.open("POST", url, true);
 
