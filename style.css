@@ -22,6 +22,17 @@ body {
   flex:wrap;
 }
 
+.articles{
+    display: flex;
+    flex-wrap: wrap;
+    /*flex-flow: row wrap;*/
+    flex-direction: row;
+    align-content: flex-start;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 20px;
+  }
+
 .main  {
   background-color: #6d6de8;
   color: white;
