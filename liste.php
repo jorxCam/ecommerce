@@ -54,15 +54,16 @@ while ($donnees = $reponse->fetch())
 
     <div style="margin-left: 10px;">
     <?php echo '<img src=images/'.$donnees['image'].' alt="image" width="100" height="100" >'; ?><br>
+    <?php echo $donnees['description_article']; ?> <br> <br>
 
-    <strong>     id_article           </strong> :    <?php echo $donnees['id_article'];          ?> <br>
-    <strong>     nom_article          </strong> :    <?php echo $donnees['nom_article'];         ?> <br> 
-    <strong>     prix_article         </strong> :    <?php echo $donnees['prix_article'];        ?> <br>
-    <strong>     desc_article         </strong> :    <?php echo $donnees['description_article']; ?> <br> 
-    <strong>     categorie            </strong> :    <?php echo $donnees['categorie'];           ?> <br>
-    <strong>     annee                </strong> :    <?php echo $donnees['annee'];               ?> <br> 
-    <strong>     stockage             </strong> :    <?php echo $donnees['stockage'];            ?> <br>
-    <strong>     disponible           </strong> :    <?php echo $donnees['disponible'];          ?> <br>
+    <strong>     id_article___:  </strong>     <?php echo $donnees['id_article'];          ?> <br>
+    <strong>     nom_article__:  </strong>     <?php echo $donnees['nom_article'];         ?> <br> 
+    <strong>     prix_article_:  </strong>     <?php echo $donnees['prix_article'];        ?> <br>
+    
+    <strong>     categorie____:  </strong>     <?php echo $donnees['categorie'];           ?> <br>
+    <strong>     annee________:  </strong>     <?php echo $donnees['annee'];               ?> <br> 
+    <strong>     stockage_____:  </strong>     <?php echo $donnees['stockage'];            ?> <br>
+    <strong>     disponible___:  </strong>     <?php echo $donnees['disponible'];          ?> <br>
     </div>
 
    <p>
