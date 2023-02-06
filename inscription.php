@@ -30,7 +30,7 @@
 <h2>Inscription</h2>
  <h3>completez vos coordonnees pour creér la compte: </h3>
 
-<form name="form2" action="#">
+<form name="form2" action="insert.php" method="post">
 <ul>
         <li>    <label for="fname">Prenom:</label><br> </li>
         <li>    <input type="text" id="fname" name="fname" placeholder="John"><br></li>
@@ -42,7 +42,7 @@
         <li>    <input type="text" id="pseudo" name="pseudo" placeholder="pseudo"><br></li>
 
         <li>     <label for="email">Email:</label><br></li>
-        <li>    <input type="text" id="email" placeholder="email@example.com" onblur="validateemail2();"/><label id="validate"></label><br></li>
+        <li>    <input type="text" id="email" name="email" placeholder="email@example.com" onblur="validateemail2();"/><label id="validate"></label><br></li>
         
   
         <li>    <label for="pwd">Mot de passe:</label><br></li>

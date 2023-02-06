@@ -1,3 +1,5 @@
+
+
 function ValidateEmaillogin(inputText)
 {
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -22,9 +24,13 @@ var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 //document.write($inputText);
 if(inputText.value.match(mailformat))
     {
-        alert(inputText.value);
-        //alert("bon email address!");
+        //alert(inputText.value);
+        alert("bon email address!");
         document.form2.email.focus();
+        
+
+
+
         return true;
     }
 else
