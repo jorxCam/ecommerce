@@ -1,8 +1,6 @@
 <?php
 include 'bdd.php';
 
-$fname= $_POST['fname'];
-$lname= $_POST['lname'];
 $pseudo= $_POST['pseudo'];
 $email= $_POST['email'];
 $pwd= $_POST['pwd'];
@@ -10,8 +8,7 @@ $pwd= $_POST['pwd'];
 echo 'login : ' .$pseudo.'<br>';
 echo 'passwd : ' .$pwd.'<br>';
 echo 'email : ' .$email.'<br>';
-echo 'nom   : ' .$lname.'<br>';
-echo 'prenom : ' .$fname.'<br>';
+
 
 
 try {
@@ -33,8 +30,3 @@ try {
 }
 
 //$conn = null;
-
-
-
-
-
