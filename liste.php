@@ -16,9 +16,9 @@
   </div>
 
   <div class="main">
-    <a href="" class="titulo" >ACCUEIL </a>
+    <a href="accueil.php" class="titulo" >ACCUEIL </a>
     <a href="liste.php" class="titulo" >LISTE</a>
-    <a href=""  class="titulo" >ARTICLES</a>
+    <a href="testbdd.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
 </div>
