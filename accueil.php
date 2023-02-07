@@ -20,14 +20,30 @@
   <div class="main">
     <a href="accueil.php" class="titulo" >ACCUEIL </a>
     <a href="liste.php" class="titulo" >LISTE</a>
-    <a href="testbdd.php"  class="titulo" >ARTICLES</a>
+    <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
 </div>
 
 
     <!-- Code -->
-    
+
+<br>
+<?php
+
+session_start();
+$usuario=$_SESSION['username'];
+
+if (!isset($usuario)){
+  header( "location: index.php" );
+}else{
+    echo 'bienvenue  <h2>'.$usuario  .'</h2>';
+    echo "<a href='logout.php'> se deconnecter </a> ";
+}
+
+?>
+
+
     <div id="carouselExampleDark" class="carousel carousel-dark slide">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>

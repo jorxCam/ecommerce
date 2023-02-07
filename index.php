@@ -18,7 +18,7 @@
   <div class="main">
     <a href="accueil.php" class="titulo" >ACCUEIL </a>
     <a href="liste.php" class="titulo" >LISTE</a>
-    <a href="testbdd.php"  class="titulo" >ARTICLES</a>
+    <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
 </div>
@@ -27,14 +27,14 @@
 
 <div class="mail">
 <h2>login avec email ou pseudo</h2>
-<form name="form1" action="#"> 
+<form name="form1" action="login.php" method="get"> 
     <ul>
         <li>    <label for="login">login:</label><br></li>
-        <li>    <input type= "text" id="login" placeholder="email@example.com" onblur="validateemail2();"/><label id="validate"></label><br></li>
+        <li>    <input type= "text" id="login" name="login" placeholder="email@example.com" required onblur="validateemail2();"/><label id="validate"></label><br></li>
         <li>&nbsp;</li>
 
         <li><label for="pwd">Password:</label><br></li>
-        <li><input type="password" id="pwd" name="pwd"><br></li>
+        <li><input type="password" id="pwd" name="pwd" required><br></li>
         <li>&nbsp;</li>
 
         <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmaillogin(document.form1.login)"/></li>
