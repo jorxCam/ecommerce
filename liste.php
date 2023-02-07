@@ -38,39 +38,51 @@ if (!isset($usuario)){
 
 ?>
 
+<?php
+/* filtre recherche */
+
+
+
+
+?>
+
+
+
+
+
+
 <br>
 <div class="articles">
-<br>
+  <br>
 
-<?php
-require 'bdd.php';  
+  <?php
+    require 'bdd.php';  
 
-// On récupère tout le contenu de la table 
-$reponse = $conn->query('SELECT * FROM article');
-// On affiche chaque entrée une à une
-$res=0;
-while ($donnees = $reponse->fetch())
-{
+    // On récupère tout le contenu de la table 
+    $reponse = $conn->query('SELECT * FROM article');
+    // On affiche chaque entrée une à une
+    $res=0;
 
-?>
+    while ($donnees = $reponse->fetch())
+    {
+  ?>
 
     <div style="margin-left: 10px;">
-    <?php echo '<a href="article.php?id='.$donnees['id_article'].'"><img src=images/'.$donnees['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
-    <?php echo $donnees['description_article']; ?> <br> <br>
+      <?php echo '<a href="article.php?id='.$donnees['id_article'].'"><img src=images/'.$donnees['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
+      <?php echo $donnees['description_article']; ?> <br> <br>
 
-    <strong>     nom_article__:  </strong>     <?php echo $donnees['nom_article'];         ?> <br> 
-    <strong>     prix_article_:  </strong>     <?php echo $donnees['prix_article'];        ?> <br>
-    <strong>     categorie____:  </strong>     <?php echo $donnees['categorie'];           ?> <br>
-
+      <strong>     nom_article__:  </strong>     <?php echo $donnees['nom_article'];         ?> <br> 
+      <strong>     prix_article_:  </strong>     <?php echo $donnees['prix_article'];        ?> <br>
+      <strong>     categorie____:  </strong>     <?php echo $donnees['categorie'];           ?> <br>
     </div>
-
    <p>
 
-<?php
-
-}
-$reponse->closeCursor(); // Termine le traitement de la requête
-?>
+  <?php
+    }
+      $reponse->closeCursor(); // Termine le traitement de la requête
+  ?>
 </div>
+
 </body>
+
 </html>
