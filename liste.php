@@ -23,16 +23,17 @@
   </div>
 </div>
 
+<br>
 <?php
-
+//session handling
 session_start();
 $usuario=$_SESSION['username'];
 
 if (!isset($usuario)){
   header( "location: index.php" );
 }else{
-    echo "bienvenue  <h2>".$usuario  ."</h2>";
-    echo "<a href='logout.php'> se deconnecter </a> ";
+    echo 'connecté :  <strong>'.$usuario  .'</strong>';
+    echo "<br><a href='logout.php'> se deconnecter </a> ";
 }
 
 ?>

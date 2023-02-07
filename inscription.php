@@ -54,11 +54,7 @@
         <p>vous pouvez appuyer sur "Reset" pour effacer les valeurs.</p>
 </ul>
 
-  
-
 </form> 
-
-
 </div>
 
 
@@ -104,9 +100,6 @@ catch (tryMicrosoft) {
     request.send(vars);
     }
 </script>
-
-
-
 
 </body>
 </html>
