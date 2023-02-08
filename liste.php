@@ -41,12 +41,13 @@ if (!isset($usuario)){
 <?php
 /* filtre recherche */
 
-
+include ('funciones.php');
+//buscar('basket',2);
 
 
 ?>
 
-
+<br><input type="text" name="buscar"><br>
 
 
 
