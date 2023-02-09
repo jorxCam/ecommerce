@@ -23,6 +23,9 @@
   </div>
 </div>
 
+
+
+
 <br>
 <?php
 //session handling
@@ -37,20 +40,58 @@ if (!isset($usuario)){
 }
 
 ?>
+<br>
+<br>
+
 
 <?php
 /* filtre recherche */
 
 include ('funciones.php');
-//buscar('basket',2);
+//ici demarre la recherche vide pour montre tous les articles
+$articulos =buscar();
 
+//var_dump($articulos);
+//var_dump($articulos[0]['nom_article']);
+//die();
 
 ?>
+    
+<br> <input type="text" name="buscar"> <br>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+<script src="buscar.js"></script>
 
-<br><input type="text" name="buscar"><br>
+
+<p>Keypresses: <span>0</span></p>
+
+<br>
+<div class="articles">
+  <br>
+<?php 
+//montrer les articles recherches
+
+foreach ($articulos as $u){
+  
+  ?>
+
+  <div style="margin-left: 10px;">
+  <?php echo '<a href="article.php?id='.$u['id_article'].'"><img src=images/'.$u['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
+  <?php echo $u['description_article']; ?> <br> <br>
+
+  <strong>     nom_article__:  </strong>     <?php echo $u['nom_article'];         ?> <br> 
+  <strong>     prix_article_:  </strong>     <?php echo $u['prix_article'];        ?> <br>
+  <strong>     categorie____:  </strong>     <?php echo $u['categorie'];           ?> <br>
+</div>
+<p>
+
+<?php
+
+}
+?>
+</div>
 
 
-
+//////////////////////////////
 
 <br>
 <div class="articles">
@@ -63,6 +104,8 @@ include ('funciones.php');
     $reponse = $conn->query('SELECT * FROM article');
     // On affiche chaque entrée une à une
     $res=0;
+
+
 
     while ($donnees = $reponse->fetch())
     {
