@@ -38,26 +38,26 @@ if (!isset($usuario)){
 }
 
 ?>
-
+<br>
 <!-- Slideshow container -->
 <div class="slideshow-container">
 
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="images/produit5.jpg" style="width:30%" >
+    <img src="imgslide\herramientas-deportivas.jpg" style="width:1000px" >
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="images/produit2.jpg" style="width:30%" >
+    <img src="imgslide\raquetas-tennis.jpg" style="width:1000px" >
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="images/produit3.jpg" style="width:30%" >
+    <img src="imgslide\frutas-variadas-pina-fresa.jpg" style="width:1000px" >
     <div class="text">Caption Three</div>
   </div>
 
