@@ -29,6 +29,7 @@
 //session handling
 session_start();
 $usuario=$_SESSION['username'];
+$panierarray[0]=$_SESSION['panier'];
 
 if (!isset($usuario)){
   header( "location: index.php" );

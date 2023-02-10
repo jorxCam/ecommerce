@@ -23,14 +23,12 @@
   </div>
 </div>
 
-
-
-
 <br>
 <?php
 //session handling
 session_start();
 $usuario=$_SESSION['username'];
+$panierarray[0]=$_SESSION['panier'];
 
 if (!isset($usuario)){
   header( "location: index.php" );
@@ -87,29 +85,9 @@ foreach ($articulos as $u){
   
   <?php
 
-
-
   }
 
-echo '<br>';
-/*
 
-
-  /*
-  ?>
-
-  <div style="margin-left: 10px;">
-  <?php echo '<a href="article.php?id='.$u['id_article'].'"><img src=images/'.$u['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
-  <?php echo $u['description_article']; ?> <br> <br>
-
-  <strong>     nom_article__:  </strong>     <?php echo $u['nom_article'];         ?> <br> 
-  <strong>     prix_article_:  </strong>     <?php echo $u['prix_article'];        ?> <br>
-  <strong>     categorie____:  </strong>     <?php echo $u['categorie'];           ?> <br>
-</div>
-<p>
-
-<?php
-*/
 }
 ?>
 </div>

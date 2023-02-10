@@ -3,6 +3,7 @@ require 'bdd.php';
 
 
 session_start();
+$panier='casa';
 
 
 $login= $_GET["login"];
@@ -37,6 +38,7 @@ try {
     if ($v==true){
         //echo ' bienvenue ' ;
         $_SESSION['username']= $pseudo;
+        $_SESSION['panier']= $panier;
         header("Location: accueil.php");
         exit();
     }else{
@@ -49,7 +51,7 @@ try {
 
 
 } catch(PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    echo $conn . "<br>erreur conection bdd <br>" . $e->getMessage();
 }
 
 //$conn = null;
