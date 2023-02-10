@@ -3,7 +3,7 @@
 
     $cant_por_pagina=10;
 
-    function buscar ( $que =NULL, $pagina =1){
+    function buscarbd ( $que =NULL, $pagina =1){
       global $conn, $cant_por_pagina;
 
       $where = is_null($que) ? '': " WHERE description_article LIKE '%$que%' ";
@@ -24,7 +24,7 @@
       //var_dump($filas);
       //var_dump($registros);
 
-      return $filas;
+      return ['resultados' => $filas];
 
     }
 

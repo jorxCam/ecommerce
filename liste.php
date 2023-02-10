@@ -46,11 +46,10 @@ if (!isset($usuario)){
 
 <?php
 /* filtre recherche */
-
+require 'bdd.php';
 include ('funciones.php');
 //ici demarre la recherche vide pour montre tous les articles
-$articulos =buscar();
-
+$articulos =buscarbd();
 //var_dump($articulos);
 //var_dump($articulos[0]['nom_article']);
 //die();
@@ -65,13 +64,38 @@ $articulos =buscar();
 <p>Keypresses: <span>0</span></p>
 
 <br>
-<div class="articles">
+<div class="articles" id="publicaciones">
   <br>
 <?php 
 //montrer les articles recherches
 
 foreach ($articulos as $u){
+//var_dump($u);
+  foreach ($u as $t ){
+         
+    ?>
+
+    <div style="margin-left: 10px;">
+    <?php echo '<a href="article.php?id='.$t['id_article'].'"><img src=images/'.$t['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
+    <?php echo $t['description_article']; ?> <br> <br>
   
+    <strong>     nom_article__:  </strong>     <?php echo $t['nom_article'];         ?> <br> 
+    <strong>     prix_article_:  </strong>     <?php echo $t['prix_article'];        ?> <br>
+    <strong>     categorie____:  </strong>     <?php echo $t['categorie'];           ?> <br>
+  </div>
+  <p>
+  
+  <?php
+
+
+
+  }
+
+echo '<br>';
+/*
+
+
+  /*
   ?>
 
   <div style="margin-left: 10px;">
@@ -85,7 +109,7 @@ foreach ($articulos as $u){
 <p>
 
 <?php
-
+*/
 }
 ?>
 </div>
@@ -98,7 +122,7 @@ foreach ($articulos as $u){
   <br>
 
   <?php
-    require 'bdd.php';  
+      
 
     // On récupère tout le contenu de la table 
     $reponse = $conn->query('SELECT * FROM article');
