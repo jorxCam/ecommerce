@@ -21,9 +21,8 @@
     <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
-</div>
+</div><br>
 
-<br>
 <?php
 //session handling
 session_start();
@@ -37,10 +36,7 @@ if (!isset($usuario)){
     echo "<br><a href='logout.php'> se deconnecter </a> ";
 }
 
-?>
-<br>
-<br>
-
+?><br><br>
 
 <?php
 /* filtre recherche */
@@ -53,12 +49,9 @@ $articulos =buscarbd();
 //die();
 
 ?>
-    
 <br> <input type="text" name="buscar"> <br>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
 <script src="buscar.js"></script>
-
-
 <p>Keypresses: <span>0</span></p>
 
 <br>
@@ -72,7 +65,6 @@ foreach ($articulos as $u){
   foreach ($u as $t ){
          
     ?>
-
     <div style="margin-left: 10px;">
     <?php echo '<a href="article.php?id='.$t['id_article'].'"><img src=images/'.$t['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
     <?php echo $t['description_article']; ?> <br> <br>
@@ -87,12 +79,8 @@ foreach ($articulos as $u){
 
   }
 
-
 }
 ?>
 </div>
-
-
 </body>
-
 </html>
