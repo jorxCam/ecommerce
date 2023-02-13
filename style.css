@@ -20,6 +20,7 @@ body {
   background-color: #388087;
   display:flex;
   flex:wrap;
+  box-shadow: 5px 5px 15px gray;
 }
 
 
@@ -32,6 +33,7 @@ body {
     margin-left: 20px;
     margin-right: 20px;
     padding: 20px;
+    box-shadow: 5px 5px 15px gray;
   }
 
 .main  {
