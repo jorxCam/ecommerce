@@ -1,7 +1,7 @@
 <?php
     require 'bdd.php';  
 
-    $cant_por_pagina=10;
+    $cant_por_pagina=100;
 
     function buscarbd ( $que =NULL, $pagina =1){
       global $conn, $cant_por_pagina;

@@ -10,9 +10,10 @@
 </head>
 <body onload='document.form1.login.focus()'>
 
+
 <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 150px;">
+    <img src="logo.png" style="padding: 1px;width: 50px;"> 
   </div>
 
   <div class="main">
@@ -27,7 +28,7 @@
 
 <div class="mail">
 <h2>login avec email ou pseudo</h2>
-<form name="form1" action="login.php" method="get"> 
+<form name="form1" action="login.php" method="post"> 
     <ul>
         <li>    <label for="login">login:</label><br></li>
         <li>    <input type= "text" id="login" name="login" placeholder="email@example.com" required onblur="validateemail2();"/><label id="validate"></label><br></li>

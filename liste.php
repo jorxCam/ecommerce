@@ -12,7 +12,7 @@
 
 <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 150px;">
+    <img src="logo.png" style="padding: 1px;width: 50px;">
   </div>
 
   <div class="main">
@@ -27,7 +27,7 @@
 //session handling
 session_start();
 $usuario=$_SESSION['username'];
-$panierarray[0]=$_SESSION['panier'];
+$panierarray=$_SESSION['panier'];
 //echo 'after refresh 1 time : '.$panierarray[0];
 
 if (!isset($usuario)){
@@ -37,15 +37,33 @@ if (!isset($usuario)){
     echo "<br><a href='logout.php'> se deconnecter </a> ";
     //montrer panier
     //echo 'not for : '.$panierarray[0];
+//var_dump($panierarray);
 
+/*
+echo '<br>panier : ';
+    for ($x=0;$x<count($panierarray); $x++) { 
+      if ($panierarray[$x]!=NULL){
+        echo '<br><a href="article.php?id='.$panierarray[$x].'">  article '.$panierarray[$x].'</a>';
+      }
+     // echo '<br>panier : '.$panierarray[$x];
+     }
+  */
+//print_r($panierarray);
+
+
+echo '<br>panier : ';
     foreach( $panierarray as $p){
-      echo '<br>panier :'.$p;
       //var_dump( $p );
-
+      if ($p!=NULL){
+        echo '<br><a href="article.php?id='.$p.'">  article '.$p.'</a>';
+      }
     }
+    
 }
 
 ?>
+
+
 
 <br><br>
 

@@ -3,10 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://getbootstrap.com/docs/5.3/assets/css/docs.css" rel="stylesheet">
     <title>e-commerce</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
     <link rel="stylesheet" href="style.css" type='text/css'>
   </head>
   <body class="p-3 m-0 border-0 bd-example">
@@ -14,7 +12,7 @@
   <!-- navbar -->
   <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 150px;">
+    <img src="logo.png" style="padding: 1px;width: 50px;">
   </div>
 
   <div class="main">
@@ -32,7 +30,7 @@
 //session handling
 session_start();
 $usuario=$_SESSION['username'];
-$panierarray[0]=$_SESSION['panier'];
+$panierarray=$_SESSION['panier'];
 //echo 'after refresh 1 time : '.$panierarray[0];
 
 if (!isset($usuario)){
@@ -43,10 +41,21 @@ if (!isset($usuario)){
     //montrer panier
     //echo 'not for : '.$panierarray[0];
 
-    foreach( $panierarray as $p){
-      echo '<br>panier :'.$p;
-      //var_dump( $p );
+    //print_r($panierarray);
+    /*
+    echo '<br>panier : ';
+    for ($x=0;$x<count($panierarray); $x++) { 
+      echo '<br> article '.$panierarray[$x];
+     }
+*/
 
+
+echo '<br>panier : ';
+    foreach( $panierarray as $p){
+      //var_dump( $p );
+      if ($p!=NULL){
+        echo '<br><a href="article.php?id='.$p.'">  article '.$p.'</a>';
+      }
     }
 }
 
@@ -114,11 +123,11 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 <div class="submit">
 <input type="button" value="ajouter">
 </div>
-
+<p>
 <form action="retirer.php" method="post" id="myForm2">
 <input type="hidden" id="retirer" name="retirer" value=<?php echo $artajouter; ?> >
 </form>
-<div class="submit">
+<div class="submit2">
 <input type="button" value="retirer">
 </div>
 
@@ -127,13 +136,14 @@ const myForm = document.getElementById("myForm");
 document.querySelector(".submit").addEventListener("click", function(){
   myForm.submit();
 });
+</script>
 
-const myForm2 = document.getElementById("myForm2");
-document.querySelector(".submit").addEventListener("click", function(){
+<script>
+  const myForm2 = document.getElementById("myForm2");
+document.querySelector(".submit2").addEventListener("click", function(){
   myForm2.submit();
 });
 </script>
-
 
 
 

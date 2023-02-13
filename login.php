@@ -3,11 +3,11 @@ require 'bdd.php';
 
 
 session_start();
-$panier='casa';
+$panier=array();;
 
 
-$login= $_GET["login"];
-$pwd= $_GET["pwd"];
+$login= $_POST["login"];
+$pwd= $_POST["pwd"];
 
 
 
