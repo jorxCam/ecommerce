@@ -10,15 +10,16 @@
 </head>
 <body onload='document.form1.login.focus()'>
 
+
 <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 150px;">
+    <img src="logo.png" style="padding: 1px;width: 50px;"> 
   </div>
 
   <div class="main">
-    <a href="" class="titulo" >ACCUEIL </a>
-    <a href="" class="titulo" >LISTE</a>
-    <a href=""  class="titulo" >ARTICLES</a>
+    <a href="accueil.php" class="titulo" >ACCUEIL </a>
+    <a href="liste.php" class="titulo" >LISTE</a>
+    <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
 </div>
@@ -27,17 +28,17 @@
 
 <div class="mail">
 <h2>login avec email ou pseudo</h2>
-<form name="form1" action="#"> 
+<form name="form1" action="login.php" method="post"> 
     <ul>
         <li>    <label for="login">login:</label><br></li>
-        <li>    <input type= "text" id="login" onblur="validateemail2();"/><label id="validate"></label><br></li>
+        <li>    <input type= "text" id="login" name="login" placeholder="email@example.com" required onblur="validateemail2();"/><label id="validate"></label><br></li>
         <li>&nbsp;</li>
 
         <li><label for="pwd">Password:</label><br></li>
-        <li><input type="password" id="pwd" name="pwd"><br></li>
+        <li><input type="password" id="pwd" name="pwd" required><br></li>
         <li>&nbsp;</li>
 
-        <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmail(document.form1.login)"/></li>
+        <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmaillogin(document.form1.login)"/></li>
         <li>&nbsp;</li>
     </ul>
 </form>
@@ -70,7 +71,7 @@ catch (tryMicrosoft) {
                         }
                     }
 
-    var url= "emailvalidation.php";
+    var url= "emailvalidationlogin.php";
     var emailaddress= document.getElementById("login").value;
     var vars= "email="+emailaddress;
     request.open("POST", url, true);
