@@ -33,6 +33,7 @@
 session_start();
 $usuario=$_SESSION['username'];
 $panierarray[0]=$_SESSION['panier'];
+//echo 'after refresh 1 time : '.$panierarray[0];
 
 if (!isset($usuario)){
   header( "location: index.php" );
@@ -40,7 +41,8 @@ if (!isset($usuario)){
     echo 'connecté :  <strong>'.$usuario  .'</strong>';
     echo "<br><a href='logout.php'> se deconnecter </a> ";
     //montrer panier
-    
+    //echo 'not for : '.$panierarray[0];
+
     foreach( $panierarray as $p){
       echo '<br>panier :'.$p;
       //var_dump( $p );
@@ -103,17 +105,39 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 </div>
 
 
-<form action="ajouter.php" method="POST">
-  <label for="ajouter">ajouté :</label>
-  <input type="text" id="ajouter" name="ajouter" value=<?php echo $artajouter; ?> >
-  <input type="submit" value="Submit">
-</form>
 
-<form action="retirer.php">
-  <label for="retirer">retiré :</label>
-  <input type="text" id="retirer" name="retirer" value="hola" >
-  <input type="submit" value="Submit">
+
+
+<form action="ajouter.php" method="post" id="myForm">
+<input type="hidden" id="ajouter" name="ajouter" value=<?php echo $artajouter; ?> >
 </form>
+<div class="submit">
+<input type="button" value="ajouter">
+</div>
+
+<form action="retirer.php" method="post" id="myForm2">
+<input type="hidden" id="retirer" name="retirer" value=<?php echo $artajouter; ?> >
+</form>
+<div class="submit">
+<input type="button" value="retirer">
+</div>
+
+<script>
+const myForm = document.getElementById("myForm");
+document.querySelector(".submit").addEventListener("click", function(){
+  myForm.submit();
+});
+
+const myForm2 = document.getElementById("myForm2");
+document.querySelector(".submit").addEventListener("click", function(){
+  myForm2.submit();
+});
+</script>
+
+
+
+
+
 
 
 

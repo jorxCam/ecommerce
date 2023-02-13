@@ -28,15 +28,26 @@
 session_start();
 $usuario=$_SESSION['username'];
 $panierarray[0]=$_SESSION['panier'];
+//echo 'after refresh 1 time : '.$panierarray[0];
 
 if (!isset($usuario)){
   header( "location: index.php" );
 }else{
     echo 'connecté :  <strong>'.$usuario  .'</strong>';
     echo "<br><a href='logout.php'> se deconnecter </a> ";
+    //montrer panier
+    //echo 'not for : '.$panierarray[0];
+
+    foreach( $panierarray as $p){
+      echo '<br>panier :'.$p;
+      //var_dump( $p );
+
+    }
 }
 
-?><br><br>
+?>
+
+<br><br>
 
 <?php
 /* filtre recherche */
