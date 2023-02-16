@@ -20,25 +20,33 @@
     <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
+
+  <div class="right">
+    <?php
+        //session handling
+        session_start();
+        $usuario=$_SESSION['username'];
+        $panierarray[0]=$_SESSION['panier'];
+        
+
+        if (!isset($usuario)){
+          header( "location: index.php" );
+        }else{
+            echo 'connecté :  <strong>'.$usuario  .'</strong>';
+            echo "<br><a href='logout.php'> se deconnecter </a> ";
+        }
+
+      ?>
+  </div>
+
+
+
 </div>
 
 
     <!-- Code -->
 <br>
-<?php
-//session handling
-session_start();
-$usuario=$_SESSION['username'];
-$panierarray[0]=$_SESSION['panier'];
 
-if (!isset($usuario)){
-  header( "location: index.php" );
-}else{
-    echo 'connecté :  <strong>'.$usuario  .'</strong>';
-    echo "<br><a href='logout.php'> se deconnecter </a> ";
-}
-
-?>
 <br>
 <!-- Slideshow container -->
 <div class="slideshow-container">
@@ -46,19 +54,19 @@ if (!isset($usuario)){
   <!-- Full-width images with number and caption text -->
   <div class="mySlides fade">
     <div class="numbertext">1 / 3</div>
-    <img src="imgslide\herramientas-deportivas.jpg" style="width:1000px" >
+    <img src="imgslide\herramientas-deportivas.jpg" style="height:580px" >
     <div class="text">Caption Text</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">2 / 3</div>
-    <img src="imgslide\raquetas-tennis.jpg" style="width:1000px" >
+    <img src="imgslide\raquetas-tennis.jpg" style="height:580px" >
     <div class="text">Caption Two</div>
   </div>
 
   <div class="mySlides fade">
     <div class="numbertext">3 / 3</div>
-    <img src="imgslide\frutas-variadas-pina-fresa.jpg" style="width:1000px" >
+    <img src="imgslide\frutas-variadas-pina-fresa.jpg" style="height:580px" >
     <div class="text">Caption Three</div>
   </div>
 

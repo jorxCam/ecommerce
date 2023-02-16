@@ -2,7 +2,8 @@
 require 'bdd.php';
 
 session_start();
-$panier=array();;
+$panier=array();
+$total=0;
 
 
 $login= $_POST["login"];
@@ -30,6 +31,7 @@ foreach(($stmt->fetchAll()) as $k=>$v) {
 if (password_verify($contrasenapost,$contrasenaDB)) {
   $_SESSION['username']= $pseudo;
   $_SESSION['panier']= $panier;
+  $_SESSION['total']=$total;
   header("Location: accueil.php");
   exit();   
 } else { 

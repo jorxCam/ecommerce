@@ -21,35 +21,34 @@
     <a href="article.php"  class="titulo" >ARTICLES</a>
     <a href=""  class="titulo" >CONTACT</a>
   </div>
+
+  <div class="right">
+    <?php
+        //session handling
+        session_start();
+        $usuario=$_SESSION['username'];
+
+        if (!isset($usuario)){
+          header( "location: index.php" );
+        }else{
+            echo 'connecté :  <strong>'.$usuario  .'</strong>';
+            echo "<br><a href='logout.php'> se deconnecter </a> ";
+        }
+
+      ?>
+  </div>
+
+
 </div><br>
 
 <?php
-//session handling
-session_start();
-$usuario=$_SESSION['username'];
+
 $panierarray=$_SESSION['panier'];
-//echo 'after refresh 1 time : '.$panierarray[0];
+$total=$_SESSION['total'];
 
 if (!isset($usuario)){
   header( "location: index.php" );
 }else{
-    echo 'connecté :  <strong>'.$usuario  .'</strong>';
-    echo "<br><a href='logout.php'> se deconnecter </a> ";
-    //montrer panier
-    //echo 'not for : '.$panierarray[0];
-//var_dump($panierarray);
-
-/*
-echo '<br>panier : ';
-    for ($x=0;$x<count($panierarray); $x++) { 
-      if ($panierarray[$x]!=NULL){
-        echo '<br><a href="article.php?id='.$panierarray[$x].'">  article '.$panierarray[$x].'</a>';
-      }
-     // echo '<br>panier : '.$panierarray[$x];
-     }
-  */
-//print_r($panierarray);
-
 
 echo '<br>panier : ';
     foreach( $panierarray as $p){
@@ -58,10 +57,26 @@ echo '<br>panier : ';
         echo '<br><a href="article.php?id='.$p.'">  article '.$p.'</a>';
       }
     }
+
+    echo '<p class="text-right">Total: <span id=> '.$total.'  </span>&euro;</p>';
     
 }
-
 ?>
+
+  <form action="vider.php" method="post" id="myForm">
+  </form>
+
+  <div class="submit">
+    <button id="boton-vaciar" class="btn btn-danger">vider</button>
+  </div>
+
+
+<script>
+  const myForm = document.getElementById("myForm");
+document.querySelector(".submit").addEventListener("click", function(){
+  myForm.submit();
+});
+</script>
 
 
 

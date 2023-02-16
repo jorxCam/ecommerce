@@ -1,6 +1,6 @@
 
 body {
-    background-color: rgb(223, 223, 223);
+    background-color: #badfe7;
   }
   h1 {
     color: black;
@@ -23,6 +23,30 @@ body {
   box-shadow: 5px 5px 15px gray;
 }
 
+.buttons{
+  display:flex;
+  flex:wrap;
+  align-content: space-between;
+  margin-left: 20px;
+  margin-right: 20px;
+  
+}
+
+.text-right{
+  align-content: end;
+}
+
+.text-description{
+  padding: 10px;
+  margin: 10px;
+  box-shadow: 5px 5px 15px #388087;
+}
+
+#texto {
+  
+  padding: 1px;
+  /* box-shadow: 5px 5px 8px #388087; */
+}
 
 .articles{
     display: flex;
@@ -39,7 +63,7 @@ body {
 .main  {
   background-color: #388087;
   color: white;
-  width: 100%;
+  width: 70%;
   display: flex;
   justify-content: baseline;
   text-decoration: none;
