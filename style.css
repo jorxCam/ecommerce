@@ -125,5 +125,19 @@ li {list-style-type: none;
     }
 
 
+    /************************************************************************************/
 
-  
+    
+  .todo{
+    display:flex;
+    flex-direction: row-reverse;
+  }
+
+  #rectangle {
+    width  : 50%;
+    height : 50%;
+    margin-right: 10px;
+    padding-left: 10px;
+    background : #e3d477;
+    box-shadow: 5px 5px 15px gray;
+  }

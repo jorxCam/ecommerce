@@ -41,90 +41,88 @@
 
 </div><br>
 
-<?php
 
-$panierarray=$_SESSION['panier'];
-$total=$_SESSION['total'];
+<div class="todo">
+        <div id="rectangle">   
 
-if (!isset($usuario)){
-  header( "location: index.php" );
-}else{
+                  <?php
 
-echo '<br>panier : ';
-    foreach( $panierarray as $p){
-      //var_dump( $p );
-      if ($p!=NULL){
-        echo '<br><a href="article.php?id='.$p.'">  article '.$p.'</a>';
-      }
-    }
+              $panierarray=$_SESSION['panier'];
+              $total=$_SESSION['total'];
 
-    echo '<p class="text-right">Total: <strong id=> '.$total.'  </strong>&euro;</p>';
-    
-}
-?>
+              if (!isset($usuario)){
+                header( "location: index.php" );
+              }else{
 
-  <form action="vider.php" method="post" id="myForm">
-  </form>
+              echo '<img src="assets/shop.png" alt="panier" width="40px" height="40px"> Panier : ';
+                  foreach( $panierarray as $p){
+                    //var_dump( $p );
+                    if ($p!=NULL){
+                      echo '<br><a href="article.php?id='.$p.'">  article '.$p.'</a>';
+                    }
+                  }
 
-  <div class="submit">
-    <button id="boton-vaciar" class="btn btn-danger">vider</button>
+                  echo '<p class="text-right">Total: <strong id=> '.$total.'  </strong>&euro;</p>';
+                  
+              }
+              ?>
+
+                <form action="vider.php" method="post" id="myForm">   </form>
+                <div class="submit">     <button id="boton-vaciar" class="btn btn-danger">vider</button>   </div>
+                <script>
+                  const myForm = document.getElementById("myForm");
+                  document.querySelector(".submit").addEventListener("click", function(){
+                  myForm.submit();
+                });
+                </script>
+
+              <br><br>
+
+              <?php
+              /* filtre recherche */
+              require 'bdd.php';
+              include ('funciones.php');
+              //ici demarre la recherche vide pour montre tous les articles
+              $articulos =buscarbd();
+              ?>
+    </div>
+
+    <div class="izquierda">
+        <br> <input type="text" name="buscar"> <br>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script src="buscar.js"></script>
+        <p>Keypresses: <span>0</span></p>
+
+        <br>
+        <div class="articles" id="publicaciones">
+          <br>
+          <?php 
+          //montrer les articles recherches
+
+          foreach ($articulos as $u){
+          //var_dump($u);
+            foreach ($u as $t ){
+                  
+              ?>
+              <div style="margin-left: 10px;">
+                <?php echo '<a href="article.php?id='.$t['id_article'].'"><img src=images/'.$t['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
+                <?php echo $t['description_article']; ?> <br> <br>
+              
+                <strong>     nom_article__:  </strong>     <?php echo $t['nom_article'];         ?> <br> 
+                <strong>     prix_article_:  </strong>     <?php echo $t['prix_article'];        ?> <br>
+                <strong>     categorie____:  </strong>     <?php echo $t['categorie'];           ?> <br>
+              </div>
+              <p>
+            
+              <?php
+
+            }
+
+          }
+          ?>
+        </div>
+    </div>  
+
   </div>
-
-
-<script>
-  const myForm = document.getElementById("myForm");
-document.querySelector(".submit").addEventListener("click", function(){
-  myForm.submit();
-});
-</script>
-
-
-
-<br><br>
-
-<?php
-/* filtre recherche */
-require 'bdd.php';
-include ('funciones.php');
-//ici demarre la recherche vide pour montre tous les articles
-$articulos =buscarbd();
-//var_dump($articulos);
-//var_dump($articulos[0]['nom_article']);
-//die();
-
-?>
-<br> <input type="text" name="buscar"> <br>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-<script src="buscar.js"></script>
-<p>Keypresses: <span>0</span></p>
-
-<br>
-<div class="articles" id="publicaciones">
-  <br>
-<?php 
-//montrer les articles recherches
-
-foreach ($articulos as $u){
-//var_dump($u);
-  foreach ($u as $t ){
-         
-    ?>
-    <div style="margin-left: 10px;">
-    <?php echo '<a href="article.php?id='.$t['id_article'].'"><img src=images/'.$t['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
-    <?php echo $t['description_article']; ?> <br> <br>
-  
-    <strong>     nom_article__:  </strong>     <?php echo $t['nom_article'];         ?> <br> 
-    <strong>     prix_article_:  </strong>     <?php echo $t['prix_article'];        ?> <br>
-    <strong>     categorie____:  </strong>     <?php echo $t['categorie'];           ?> <br>
-  </div>
-  <p>
-  
-  <?php
-
-  }
-
-}
-?>
-</div>
 </body>
 </html>
