@@ -58,7 +58,7 @@ echo '<br>panier : ';
       }
     }
 
-    echo '<p class="text-right">Total: <span id=> '.$total.'  </span>&euro;</p>';
+    echo '<p class="text-right">Total: <strong id=> '.$total.'  </strong>&euro;</p>';
     
 }
 ?>
