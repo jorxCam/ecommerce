@@ -63,7 +63,7 @@ body {
 .main  {
   background-color: #388087;
   color: white;
-  width: 70%;
+  width: 60%;
   display: flex;
   justify-content: baseline;
   text-decoration: none;
@@ -134,7 +134,7 @@ li {list-style-type: none;
   }
 
   #rectangle {
-    width  : 50%;
+    width  : 500px;
     height : 50%;
     margin-right: 10px;
     padding-left: 10px;

@@ -5,7 +5,7 @@ session_start();
 $panier=array();
 $total=0;
 
-
+//se reciben los valores sin ningun filtrado por lo tanto son inyectables
 $login= $_POST["login"];
 $pass= $_POST["pwd"];
 $pseudo='';
@@ -13,8 +13,13 @@ $pseudo='';
 //$pwd=password_hash($pass, PASSWORD_DEFAULT);
 $contrasenapost = $_POST['pwd'] ?: '';    
 
+
+//filtrar los valores recibidos contra sqli
+$loginfiltrado = filter_input(INPUT_POST, 'login', FILTER_SANITIZE_SPECIAL_CHARS);
+
+
 //Sentencia SQL
-$stmt = $conn->prepare("SELECT * FROM user WHERE email = '$login'");
+$stmt = $conn->prepare("SELECT * FROM user WHERE email = '$loginfiltrado'");
 $stmt->execute();  
 
 

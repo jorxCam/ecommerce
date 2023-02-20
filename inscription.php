@@ -12,7 +12,7 @@
 
 <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 150px;">
+  <img src="logo.png" style="padding: 1px;width: 50px;">
   </div>
 
   <div class="main">
