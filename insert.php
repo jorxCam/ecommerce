@@ -36,7 +36,7 @@ try {
     $stmt = $conn->prepare($sql);
     $stmt->execute();
     //echo "New record created successfully";
-    echo '<script>alert("utilisateur creé")</script>';
+    echo 'utilisateur creé"';
     header("Location: index.php");
 
 } catch(PDOException $e) {

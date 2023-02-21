@@ -14,7 +14,7 @@ if(inputText.value.match(mailformat) && inputPass.value.match(passformat)     )
     }
 else
     {
-        alert("votre email address nest pas valable! ou password trop faible!");
+        alert("votre email address ou password nest pas valable");
         document.form1.login.focus();
         return false;
     }

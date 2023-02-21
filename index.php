@@ -43,6 +43,8 @@ $password='';
         <li><div class="rq" id="cont1"></div></li>
         <li>&nbsp;</li>
 
+        <li><input type="checkbox" id="accept" name="accept" value="accepte" required><div class="accept"> J'accepte la politique de confidentialité et le traitement de l'information personnelle sur le site ecommerce.fr.</div><br></li>
+
         <li class="submit"><input type="submit" name="submit" value="Submit" onclick="ValidateEmaillogin(document.form1.login,document.form1.pwd)"/></li>
         <li>&nbsp;</li>
     </ul>
