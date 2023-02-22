@@ -33,7 +33,14 @@
         }else{
             echo 'connecté :  <strong>'.$usuario  .'</strong>';
             echo "<br><a href='logout.php'> se deconnecter </a> ";
+
+            //inclus le fichier pour generer le token et on execute la fonction
+            include_once "assets/csrf.php";
+            csrf();
+           
         }
+
+
 
       ?>
   </div>
@@ -43,6 +50,8 @@
 
     <br>
 <?php
+//on montre le token 
+echo 'token: '.$_SESSION['token'];
 
 $panierarray=$_SESSION['panier'];
 $total=$_SESSION['total'];
@@ -126,6 +135,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
 <br>
 <div class="buttons">
   <form action="ajouter.php" method="post" id="myForm">
+    <input type="hidden" name="token" value=<?php echo $_SESSION['token']; ?> >
     <input type="hidden" id="ajouter" name="ajouter" value=<?php echo $artajouter; ?> >
     <input type="hidden" id="prix" name="prix" value=<?php echo $prixajouter; ?> >
   </form>
