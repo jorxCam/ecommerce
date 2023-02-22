@@ -38,7 +38,7 @@ try {
     //echo "New record created successfully";
     echo 'utilisateur creé"';
     header("Location: index.php");
-
+    exit();
 } catch(PDOException $e) {
     echo $sql . "<br>" . $e->getMessage();
 }

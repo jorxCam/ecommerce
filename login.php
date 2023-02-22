@@ -38,7 +38,7 @@ if (password_verify($contrasenapost,$contrasenaDB)) {
   $_SESSION['panier']= $panier;
   $_SESSION['total']=$total;
   header("Location: accueil.php");
-     
+  exit();  
 } else { 
   echo 'invalid login';
   header("Location: index.php");
