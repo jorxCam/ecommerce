@@ -94,7 +94,10 @@
     </div>
 
     <div class="izquierda">
-        <br> <input type="text" name="buscar"> <br>
+        <br> 
+        <label for="cherche">Cherchez votre article par description</label><br>
+        <input type="hidden" id ="token"  name="token"   value=<?php echo $_SESSION['token']; ?> >
+        <input type="text" name="buscar" id="cherche"> <br>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script src="buscar.js"></script>
         <p>Keypresses: <span>0</span></p>
@@ -115,8 +118,8 @@
                 <?php echo $t['description_article']; ?> <br> <br>
               
                 <strong>     Article  :  </strong>     <?php echo $t['nom_article'];         ?> <br> 
-                <strong>     Prix :  </strong>     <?php echo $t['prix_article'];        ?> <br>
-                <strong>     Categorie :  </strong>     <?php echo $t['categorie'];           ?> <br>
+                <strong>     Prix     :  </strong>     <?php echo $t['prix_article'];        ?> <br>
+                <strong>     Categorie:  </strong>     <?php echo $t['categorie'];           ?> <br>
               </div>
               <p>
             

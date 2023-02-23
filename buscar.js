@@ -24,13 +24,13 @@
 
         d.resultados.forEach( u => {
             publicaciones.innerHTML += `
-            <div style="margin-left: 10px;">
+            <div class="resultadosarticulos">
             <a href="article.php?id=${u.id_article}"><img src=images/${u.image} alt="image" width="200" height="200" ></a> <br>
             ${u.description_article} <br> <br>
           
-            <strong>  nom_article__:  </strong>   ${u.nom_article} <br> 
-            <strong>  prix_article_:  </strong>   ${u.prix_article} <br>
-            <strong>  categorie____:  </strong>   ${u.categorie} <br>
+            <strong>  Article  :  </strong>   ${u.nom_article} <br> 
+            <strong>  Prix     :  </strong>   ${u.prix_article} <br>
+            <strong>  Categorie:  </strong>   ${u.categorie} <br>
           </div>
             `;
         });

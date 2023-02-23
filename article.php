@@ -52,7 +52,7 @@
     <br>
 <?php
 //on montre le token 
-echo 'token: '.$_SESSION['token'];
+//echo 'token: '.$_SESSION['token'];
 
 $panierarray=$_SESSION['panier'];
 $total=$_SESSION['total'];
