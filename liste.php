@@ -33,7 +33,11 @@
         }else{
             echo 'connecté :  <strong>'.$usuario  .'</strong>';
             echo "<br><a href='logout.php'> se deconnecter </a> ";
+             //inclus le fichier pour generer le token et on execute la fonction
+
         }
+        include_once "assets/csrf.php";
+        csrf();
 
       ?>
   </div>
@@ -67,7 +71,9 @@
               }
               ?>
 
-                <form action="vider.php" method="post" id="myForm">   </form>
+                <form action="vider.php" method="post" id="myForm">
+                  <input type="hidden" id ="token"  name="token"   value=<?php echo $_SESSION['token']; ?> >   
+                </form>
                 <div class="submit">     <button id="boton-vaciar" class="btn btn-danger">vider</button>   </div>
                 <script>
                   const myForm = document.getElementById("myForm");
