@@ -110,13 +110,13 @@
             foreach ($u as $t ){
                   
               ?>
-              <div style="margin-left: 10px;">
+              <div class="resultadosarticulos">
                 <?php echo '<a href="article.php?id='.$t['id_article'].'"><img src=images/'.$t['image'].' alt="image" width="200" height="200" ></a>'; ?><br>
                 <?php echo $t['description_article']; ?> <br> <br>
               
-                <strong>     nom_article__:  </strong>     <?php echo $t['nom_article'];         ?> <br> 
-                <strong>     prix_article_:  </strong>     <?php echo $t['prix_article'];        ?> <br>
-                <strong>     categorie____:  </strong>     <?php echo $t['categorie'];           ?> <br>
+                <strong>     Article  :  </strong>     <?php echo $t['nom_article'];         ?> <br> 
+                <strong>     Prix :  </strong>     <?php echo $t['prix_article'];        ?> <br>
+                <strong>     Categorie :  </strong>     <?php echo $t['categorie'];           ?> <br>
               </div>
               <p>
             
