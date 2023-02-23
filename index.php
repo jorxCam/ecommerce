@@ -13,7 +13,7 @@
 
 <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 50px;"> 
+    <img src="logo.png" alt="shipshop.com" class = "logo" > 
   </div>
 
   <div class="main">
@@ -53,7 +53,7 @@ $password='';
 
 <a href="inscription.php">Inscrivez-vous à un compte</a>
 
-<script>
+<script nonce="rAnd0m">
   
         function check(inputText) 
         { 
@@ -76,31 +76,10 @@ $password='';
         }
 </script>
 
-<?php/*
-            // Given password
-            //$password = inputText.value;
-            echo $password;
-            var_dump($password);
-            die;
-            // Validate password strength
-            $uppercase = preg_match('@[A-Z]@', $password);
-            $lowercase = preg_match('@[a-z]@', $password);
-            $number    = preg_match('@[0-9]@', $password);
-            $specialChars = preg_match('@[^\w]@', $password);
 
-            if(!$uppercase || !$lowercase || !$number || !$specialChars || strlen($password) < 8) {
-                echo 'Password should be at least 8 characters in length and should include at least one upper case letter, one number, and one special character.';
-            }else{
-                echo 'Strong password.';
-            }*/
-?>
+<script src="email-validation.js" nonce="rAnd0m"></script>
 
-
-
-
-<script src="email-validation.js"></script>
-
-<script>
+<script nonce="rAnd0m">
 function validateemail2() {
 var request;
 try {

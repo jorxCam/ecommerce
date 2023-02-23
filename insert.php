@@ -19,11 +19,8 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 //$pwd= $_POST['pwd'];
 $pwd = filter_input(INPUT_POST, 'pwd', FILTER_SANITIZE_SPECIAL_CHARS);
-//var_dump($pwd);
-//die;
 
 //Obtenemos contraseña desde un form.
-//$contrasena = $_POST['pwd'] ?: '';
 
 //Encriptamos de manera segura la contraseña
 $contrasena = password_hash($pwd, PASSWORD_DEFAULT);

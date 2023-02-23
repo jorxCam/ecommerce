@@ -11,7 +11,7 @@
   <!-- navbar -->
   <div class="navbar">
   <div class="left">
-    <img src="logo.png" style="padding: 1px;width: 50px;">
+    <img src="logo.png" alt="shipshop.com" style="padding: 1px;width: 50px;">
   </div>
 
   <div class="main">
@@ -86,7 +86,7 @@
 
 
 
-<script>
+<script nonce="rAnd0m">
 let slideIndex = 1;
 showSlides(slideIndex);
 
@@ -119,7 +119,7 @@ function showSlides(n) {
 
 
 <style>
-/*css style for slide in accueil2.php*/  
+/*css style for slide in accueil.php*/  
 
 * {box-sizing:border-box}
 

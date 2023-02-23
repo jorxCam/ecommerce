@@ -14,16 +14,6 @@
 
       $filas = $consulta->fetchAll(PDO::FETCH_ASSOC);
 
-      //$registros = [];
-      /*
-      foreach($filas as $f) {
-            $registros[] =$f;
-      }*/
-
-      //echo $consulta;
-      //var_dump($filas);
-      //var_dump($registros);
-
       return ['resultados' => $filas];
 
     }

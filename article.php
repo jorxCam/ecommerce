@@ -12,7 +12,7 @@
   <!-- navbar -->
   <div class="navbar">
     <div class="left">
-      <img src="logo.png" style="padding: 1px;width: 50px;">
+      <img src="logo.png" alt="shipshop.com" class="logo">
     </div>
 
     <div class="main">
