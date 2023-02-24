@@ -72,7 +72,7 @@
               ?>
 
                 <form action="vider.php" method="post" id="myForm">
-                  <input type="hidden" id ="token"  name="token"   value=<?php echo $_SESSION['token']; ?> >   
+                  <input type="hidden" id ="token2"  name="token"   value=<?php echo $_SESSION['token']; ?> >   
                 </form>
                 <div class="submit">     <button id="boton-vaciar" class="btn btn-danger">vider</button>   </div>
                 <script>

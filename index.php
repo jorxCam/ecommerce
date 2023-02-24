@@ -53,7 +53,7 @@ $password='';
 
 <a href="inscription.php">Inscrivez-vous à un compte</a>
 
-<script nonce="rAnd0m">
+<script >
   
         function check(inputText) 
         { 
@@ -77,9 +77,9 @@ $password='';
 </script>
 
 
-<script src="email-validation.js" nonce="rAnd0m"></script>
+<script src="email-validation.js" ></script>
 
-<script nonce="rAnd0m">
+<script >
 function validateemail2() {
 var request;
 try {
