@@ -94,6 +94,10 @@ if (!$_GET["id"] ){
 
 // On récupère tout le contenu de la table   echo $donnees['id_article'];          
 $reponse = $conn->query("SELECT * FROM article where id_article='$id' ");
+
+
+
+
 // On affiche chaque entrée une à une
 $res=0;
 while ($donnees = $reponse->fetch())
@@ -101,13 +105,13 @@ while ($donnees = $reponse->fetch())
 
 ?>
 
-    <div style="margin-left: 10px;margin-top: 10px;">
+    <div class="valores">
     <?php echo '<img src=images/'.$donnees['image'].' alt="image" width="200" height="200" >'; ?><br>
     <?php echo $donnees['description_article']; ?> <br> <br>
 
 
     </div>
-    <div class="text-description" style="margin-left: 10px;">
+    <div class="text-description">
     <div id="texto"> <strong>    Id article    :  </strong>     <?php echo $donnees['id_article'];          ?></div> <br>
     <div id="texto"> <strong>     Nom article  :  </strong>     <?php echo $donnees['nom_article'];         ?></div> <br> 
     <div id="texto"> <strong>    Prix article  :  </strong>     <?php echo $donnees['prix_article'];        ?></div> <br>
@@ -120,6 +124,8 @@ while ($donnees = $reponse->fetch())
    <p>
 
 <?php
+
+
 $artajouter=$donnees['id_article'];
 $prixajouter=$donnees['prix_article'];
 
@@ -142,7 +148,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
   </form>
 
   <div class="submit">
-    <input type="button" value="ajouter" style="width:90px; margin-right: 20px;">
+    <input type="button" value="ajouter" class="boton">
   </div>
 
   <form action="retirer.php" method="post" id="myForm2">
@@ -152,7 +158,7 @@ $reponse->closeCursor(); // Termine le traitement de la requête
   </form>
 
   <div class="submit2">
-    <input type="button" value="retirer" style="width:90px; margin-right: 20px;">
+    <input type="button" value="retirer" class="boton">
   </div>
 </div>
 

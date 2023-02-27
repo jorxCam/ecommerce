@@ -8,7 +8,7 @@ if(!$_SESSION['username']){
 }
 
 
-if(!$_SESSION['token']){
+if(!$_SESSION['token'])  {
     header("location:index.html");
     exit();
 }else {
